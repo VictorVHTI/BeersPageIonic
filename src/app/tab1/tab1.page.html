@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      <span> My Beer App</span>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="welcome-card">
+      <img src="../../assets/img/Beer-header.jpg" alt="" />
+      <ion-card-header>
+        <ion-card-title>Welcome to the beer catalog</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Come in and discover our brewery where we craft our award winning beers.</p>
+      </ion-card-content>
+    </ion-card>
+    <ion-list lines="none" id="listBeer">
+      <ion-list-header>
+        <ion-label>Beer Catalog</ion-label>
+        <ion-buttons end>
+          <ion-button style="margin-right: 20px" ion-button icon-only (click)="print()">
+            <ion-icon name="print"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-list-header>
+      <ion-item *ngFor="let b of listBeer">
+        <ion-thumbnail slot="start">
+          <img style="width: auto; padding-left: 40%;" src="{{b.image_url}}">
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{b.name}}</h2>
+          <h3>{{b.tagline}}</h3>
+          <p>{{b.first_brewed}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+</ion-content>
